@@ -1,12 +1,13 @@
 import express from "express";
-import { getProducts } from "../controllers/product.js";
+import ProductRouter from "../routers/product.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(`/api/v1`, ProductRouter);
+
 app.listen(port);
 
-const response = await getProducts();
 
 console.log(response);
 console.log(`Server started on port ${port}`);
