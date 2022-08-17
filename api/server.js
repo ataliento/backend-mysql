@@ -9,5 +9,4 @@ app.use(`/api/v1`, ProductRouter);
 app.listen(port);
 
 
-console.log(response);
 console.log(`Server started on port ${port}`);

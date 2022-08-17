@@ -3,6 +3,8 @@ import { getProducts, deleteProduct, getProduct, saveProduct, updateProduct } fr
 
 const api = express.Router();
 
+//ENDPOINTS QUE EJECUTA EL CONTROLADOR DE PRODUCT
+
 api.post("/add-product", saveProduct);
 api.get("/get-products", getProducts);
 api.get("/get-product/:id", getProduct);

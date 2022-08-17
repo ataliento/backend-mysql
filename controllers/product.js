@@ -1,5 +1,7 @@
 import database from "../bd.config.js";
 
+//CONTROLADORES: FUNCIONES QUE EJECUTAN LOS ENDPOINTS 
+
 export async function getProducts(req, res) {
     try {
         const [result] = await database.query('SELECT * FROM producto');
