@@ -29,10 +29,9 @@ export async function saveProduct(req, res) {
 };
 
 export async function getProduct(req, res) {
-    const { id } = req.query;
+    const { id } = req.params;
     try {
         const [result] = await database.query('SELECT * FROM producto WHERE id = ?', [id]);
-
         return res.status(200).json({ code: 200, result: result[0] });
     } catch (error) {
         return res.status(500).json({ code: 500, message: error.message });
@@ -40,7 +39,7 @@ export async function getProduct(req, res) {
 };
 
 export async function deleteProduct(req, res) {
-    const { id } = req.query;
+    const { id } = req.params;
     try {
         await database.query('DELETE FROM producto WHERE id = ?', [id]);
 
@@ -51,7 +50,7 @@ export async function deleteProduct(req, res) {
 };
 
 export async function updateProduct(req, res) {
-    const { id } = req.query;
+    const { id } = req.params;
     try {
         await database.query('UPDATE producto SET ? WHERE id = ?', [req.body, id]);
 
